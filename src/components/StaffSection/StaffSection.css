@@ -1,0 +1,96 @@
+/* src/components/StaffSection/StaffSection.css */
+
+.staff-section {
+  padding: 80px 0;
+  background-color: var(--color-background);
+}
+
+.staff-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.staff-header {
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.staff-header .section-title {
+  color: var(--color-primary-dark);
+  margin: 12px 0;
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile */
+  gap: 24px;
+}
+
+.staff-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-footer-border);
+  transition: all 0.3s ease;
+}
+
+/* Subtle lift effect on hover */
+.staff-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  border-color: var(--color-primary-border);
+}
+
+.staff-image-wrapper {
+  height: 350px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+}
+
+.staff-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.staff-card:hover .staff-image {
+  transform: scale(1.05);
+}
+
+.staff-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.staff-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: 4px;
+}
+
+.staff-role {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* --- Responsive Grid --- */
+
+@media (min-width: 640px) {
+  .staff-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for small tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .staff-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
+    gap: 30px;
+  }
+}

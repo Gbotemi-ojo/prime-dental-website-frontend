@@ -1,0 +1,94 @@
+/* src/components/PageHero/PageHero.css */
+
+.page-hero-section {
+  /* This uses the same dark blue as your 'Promise' section */
+  background-color: var(--color-primary-dark);
+  color: var(--color-background);
+  padding: 40px 0;
+}
+
+.page-hero-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.page-hero-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+.page-hero-description {
+  font-size: 1rem;
+  /* This light text color is from your 'Promise' section */
+  color: var(--color-text-light-on-dark);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+  max-width: 650px; /* Constrains line length */
+}
+
+/* --- Breadcrumbs --- */
+.breadcrumbs ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap; /* In case it wraps on tiny screens */
+  gap: 8px; /* Space between items on mobile */
+}
+
+.breadcrumbs li {
+  font-size: 0.9rem;
+  color: var(--color-text-light-on-dark);
+  display: flex;
+  align-items: center;
+}
+
+/* Separator: Hidden on mobile */
+.breadcrumbs li:not(:last-child)::after {
+  display: none;
+  content: '/';
+  margin-left: 8px;
+  color: var(--color-text-light-on-dark);
+  opacity: 0.5;
+}
+
+.breadcrumbs a {
+  color: var(--color-background); /* Brighter link */
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs [aria-current="page"] {
+  font-weight: 500; /* Bolder active page */
+  color: var(--color-background);
+}
+
+/* --- Tablet Styles (min-width: 768px) --- */
+@media (min-width: 768px) {
+  .page-hero-section {
+    padding: 60px 0;
+  }
+  .page-hero-container {
+    padding: 0 var(--spacing-lg);
+  }
+  .page-hero-title {
+    font-size: 2.75rem;
+  }
+  /* Show separator on tablet+ */
+  .breadcrumbs li:not(:last-child)::after {
+    display: inline;
+  }
+}
+
+/* --- Desktop Styles (min-width: 1024px) --- */
+@media (min-width: 1024px) {
+  .page-hero-section {
+    padding: 80px 0;
+  }
+  .page-hero-title {
+    font-size: 3rem;
+  }
+}

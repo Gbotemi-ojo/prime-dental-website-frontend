@@ -1,0 +1,57 @@
+/* src/components/ServiceSidebar/ServiceSidebar.css */
+
+.service-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  
+  /* On desktop, this will be sticky */
+  position: sticky;
+  top: 100px; /* 70px header + 30px breathing room */
+}
+
+.sidebar-card {
+  background-color: var(--color-background-process);
+  border-radius: 12px;
+  padding: var(--spacing-lg);
+}
+
+.sidebar-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-md);
+}
+
+.sidebar-link {
+  font-weight: 500;
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
+.sidebar-link:hover {
+  text-decoration: underline;
+}
+
+.sidebar-text {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+}
+
+.sidebar-button {
+  display: inline-block;
+  background-color: var(--color-primary-dark);
+  color: var(--color-background);
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+.sidebar-button:hover {
+  opacity: 0.9;
+}

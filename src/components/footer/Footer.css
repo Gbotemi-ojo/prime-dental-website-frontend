@@ -1,0 +1,218 @@
+/* src/components/Footer/Footer.css */
+
+.footer-section {
+  background-color: var(--color-background-footer);
+  padding: 60px 0;
+  border-top: 1px solid var(--color-footer-border);
+  position: relative; /* For the scroll-to-top button */
+  color: var(--color-text-footer);
+}
+
+.footer-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* --- Top Section --- */
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
+/* Hide Info column on mobile, as per screenshot */
+.footer-info {
+  display: none;
+}
+
+.footer-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-lg);
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: var(--color-text-footer);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-primary-dark);
+}
+
+.footer-hours-list {
+  list-style: none;
+}
+
+.footer-hours-list li {
+  display: flex;
+  flex-direction: column; /* Stack day and time on mobile */
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-footer-border);
+}
+
+.footer-hours-list li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.footer-hours-list li span:first-child {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* --- Bottom Section --- */
+.footer-bottom {
+  border-top: 1px solid var(--color-footer-border);
+  padding-top: 40px;
+  /* Mobile: Center text, stack items */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.footer-copyright {
+  font-size: 0.9rem;
+}
+
+.footer-legal {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.footer-legal a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-footer);
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* --- Scroll to Top Button --- */
+.scroll-top-button {
+  position: absolute;
+  bottom: 30px;
+  right: var(--spacing-md);
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-background);
+  color: var(--color-primary-dark);
+  border: 1px solid var(--color-footer-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.scroll-top-button:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-background);
+  border-color: var(--color-primary-dark);
+}
+
+/* --- Tablet Styles (min-width: 768px) --- */
+@media (min-width: 768px) {
+  .footer-container {
+    padding: 0 var(--spacing-lg);
+  }
+
+  .footer-top {
+    display: grid;
+    /* 4-column grid as seen in tablet screenshot */
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 30px;
+  }
+
+  /* Show Info column */
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+  }
+  
+  .footer-logo .logo-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footer-info p,
+  .footer-info a {
+    color: var(--color-text-footer);
+    line-height: 1.6;
+  }
+  
+  .footer-phone {
+    font-weight: 500;
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: 16px;
+  }
+
+  .footer-socials a {
+    color: var(--color-text-footer);
+    width: 24px;
+    height: 24px;
+  }
+  .footer-socials a:hover {
+    color: var(--color-primary-dark);
+  }
+
+  .footer-hours-list li {
+    flex-direction: row; /* Un-stack day and time */
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-hours-list li span:first-child {
+    margin-bottom: 0;
+  }
+
+  .footer-bottom {
+    flex-direction: row; /* Side-by-side */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .scroll-top-button {
+    right: var(--spacing-lg);
+    bottom: 40px;
+  }
+}
+
+/* --- Desktop Styles (min-width: 1024px) --- */
+@media (min-width: 1024px) {
+  .footer-top {
+    gap: 40px;
+  }
+}

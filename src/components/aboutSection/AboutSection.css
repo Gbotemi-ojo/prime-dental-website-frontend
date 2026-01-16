@@ -1,0 +1,175 @@
+/* src/components/AboutSection/AboutSection.css */
+
+.about-section {
+  background-color: var(--color-background); /* White */
+  padding: 60px 0;
+  overflow: hidden; /* For the blob */
+}
+
+.about-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  
+  display: flex;
+  /* Mobile-first: stack column */
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* --- Content (Left) --- */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  
+  /* Mobile: Center tag, title, p, and button */
+  align-items: center;
+  text-align: center;
+}
+
+.about-tag {
+  display: inline-block;
+  background-color: var(--color-background);
+  color: var(--color-primary-dark);
+  border: 1px solid var(--color-primary-border);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-md);
+}
+
+.about-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+.about-description {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 500px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  
+  /* Mobile: Left-align list items even when text is centered */
+  text-align: left;
+  width: 100%;
+  max-width: 500px; /* Match paragraph width */
+}
+
+.about-list li {
+  display: flex;
+  align-items: flex-start; /* Align icon with top of text */
+  gap: var(--spacing-sm);
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.about-list svg {
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  margin-top: 4px; /* Visually center with text line */
+}
+
+.about-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background-color: var(--color-primary-dark);
+  color: var(--color-background);
+  padding: 14px 28px;
+  border-radius: 50px; /* Pill shape */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.about-button:hover {
+  opacity: 0.9;
+}
+
+/* --- Image (Right) --- */
+.about-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px; /* Match text content max-width */
+  margin: 0 auto; /* Center on mobile */
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.about-image-blob {
+  display: none; /* Hide on mobile */
+}
+
+/* --- Tablet Styles (min-width: 768px) --- */
+@media (min-width: 768px) {
+  .about-section {
+    padding: 80px 0;
+  }
+  
+  .about-container {
+    /* Switch to 2-column layout */
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .about-content {
+    flex: 1 1 55%;
+    /* Left-align all content */
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .about-image-wrapper {
+    flex: 1 1 45%;
+    order: 2; /* Ensure image is on the right */
+    max-width: none;
+  }
+}
+
+/* --- Desktop Styles (min-width: 1024px) --- */
+@media (min-width: 1024px) {
+  .about-container {
+    gap: 60px;
+  }
+  
+  .about-title {
+    font-size: 2.25rem;
+  }
+
+  .about-image-blob {
+    display: block;
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 90%;
+    height: 90%;
+    background-color: var(--color-primary-light); /* Light green */
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    z-index: 1;
+    opacity: 0.7;
+    animation: blobMorph 15s ease-in-out infinite alternate;
+  }
+}

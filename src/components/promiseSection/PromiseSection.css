@@ -1,0 +1,130 @@
+/* src/components/PromiseSection/PromiseSection.css */
+
+.promise-section {
+  background-color: var(--color-background); /* White */
+  /* Add padding to create the white gutter around the dark card */
+  padding: 60px var(--spacing-md);
+}
+
+.promise-container {
+  background-color: var(--color-primary-dark);
+  border-radius: 16px;
+  padding: 40px var(--spacing-md);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+}
+
+/* --- Section Header --- */
+.promise-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.promise-tag {
+  display: inline-block;
+  /* Semi-transparent white background */
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-background);
+  opacity: 0.8;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-md);
+}
+
+.promise-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-background);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+.promise-subheading {
+  font-size: 1rem;
+  color: var(--color-text-light-on-dark); /* Use new global color */
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Commitments Grid --- */
+.promise-grid {
+  display: grid;
+  /* Mobile: 1 column */
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.promise-item {
+  /* Mobile: Center everything */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.promise-icon-wrapper {
+  background-color: var(--color-background);
+  color: var(--color-primary-dark); /* This will color the SVG */
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: var(--spacing-lg);
+}
+
+.promise-item-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-background);
+  margin-bottom: var(--spacing-sm);
+}
+
+.promise-item-description {
+  font-size: 0.95rem;
+  color: var(--color-text-light-on-dark);
+  line-height: 1.6;
+}
+
+/* --- Tablet Styles (min-width: 768px) --- */
+@media (min-width: 768px) {
+  .promise-section {
+    padding: 80px var(--spacing-lg);
+  }
+
+  .promise-container {
+    padding: 60px;
+  }
+
+  .promise-title {
+    font-size: 2.25rem;
+  }
+
+  /* Tablet: 3 columns */
+  .promise-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+  }
+
+  .promise-item {
+    /* Switch to left-aligned for tablet/desktop */
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* --- Desktop Styles (min-width: 1024px) --- */
+@media (min-width: 1024px) {
+  .promise-title {
+    font-size: 2.5rem;
+  }
+
+  .promise-grid {
+    gap: 40px;
+  }
+}

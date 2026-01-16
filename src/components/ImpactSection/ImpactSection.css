@@ -1,0 +1,144 @@
+/* src/components/ImpactSection/ImpactSection.css */
+
+.impact-section {
+  background-color: var(--color-background-process);
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.impact-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.impact-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Re-using classes (Unchanged) --- */
+.impact-content .section-tag-light {
+  margin-bottom: var(--spacing-md);
+}
+.impact-content .section-title {
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-md);
+}
+.impact-content .section-subheading {
+  margin-bottom: var(--spacing-lg);
+  max-width: 600px;
+}
+
+/* --- UPDATED: Feature List --- */
+.impact-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.impact-item-wrapper {
+  background-color: var(--color-background); /* White */
+  border: 1px solid var(--color-footer-border); /* Light border */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.impact-item-wrapper:hover {
+  border-color: var(--color-primary-border);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.impact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Make button fill its wrapper */
+  
+  background: none; /* Button is transparent */
+  border: none;
+  border-radius: 12px;
+  padding: 18px var(--spacing-md);
+  
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  text-align: left;
+  
+  cursor: pointer;
+}
+
+.impact-item:hover {
+  /* Remove individual hover, now on wrapper */
+  transform: none;
+}
+
+.impact-item-icon {
+  flex-shrink: 0;
+  margin-left: var(--spacing-md);
+  transition: transform 0.3s ease;
+  transform: rotate(0deg); /* Start pointing down */
+}
+
+/* --- NEW: Active state for icon --- */
+.impact-item.active .impact-item-icon {
+  transform: rotate(180deg); /* Flip icon up */
+}
+
+/* --- NEW: Accordion Panel Styles --- */
+.impact-item-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 0 var(--spacing-md); /* No padding when closed */
+}
+
+.impact-item-panel.active {
+  max-height: 100px; /* Set to a height larger than any content */
+  padding: 0 var(--spacing-md) 18px; /* Add padding when open */
+}
+
+
+/* --- Image (Unchanged) --- */
+.impact-image-wrapper {
+  width: 100%;
+}
+.impact-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  object-fit: cover;
+  max-height: 500px;
+}
+
+/* --- Tablet Styles (Unchanged) --- */
+@media (min-width: 768px) {
+  .impact-section {
+    padding: 80px 0;
+  }
+  .impact-container {
+    padding: 0 var(--spacing-lg);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .impact-image {
+    max-height: none;
+  }
+}
+
+/* --- Desktop Styles (Unchanged) --- */
+@media (min-width: 1024px) {
+  .impact-container {
+    gap: 60px;
+  }
+}

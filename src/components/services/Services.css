@@ -1,0 +1,155 @@
+/* src/components/Services/Services.css */
+
+.services-section {
+  background-color: var(--color-background); /* White bg */
+  padding: 60px 0;
+}
+
+.services-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* --- Section Header --- */
+.services-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-tag {
+  display: inline-block;
+  background-color: var(--color-primary-tag);
+  color: var(--color-primary-dark);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-md);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+.section-subheading {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Services Grid --- */
+.services-grid {
+  display: grid;
+  /* Mobile: 1 column */
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+/* --- Service Card --- */
+.service-card {
+  background-color: var(--color-primary-light);
+  border-radius: 16px;
+  padding: var(--spacing-lg);
+  display: flex; /* Use flex for layout control */
+  flex-direction: column; /* Mobile-first: stack items */
+  height: 100%; /* Make cards in a row equal height */
+}
+
+.service-card-category {
+  color: var(--color-primary-dark);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+}
+
+.service-card-title {
+  color: var(--color-primary-dark);
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.service-card-description {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.service-card-image-wrapper {
+  /* Mobile: This is in the middle. We use 'order' */
+  order: -1; /* Move image before text content on mobile */
+  margin-bottom: var(--spacing-md);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.service-card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.service-card-text {
+  /* Mobile: This comes after the image */
+  order: 0;
+}
+
+/* --- Tablet Styles (min-width: 768px) --- */
+@media (min-width: 768px) {
+  .services-section {
+    padding: 80px 0;
+  }
+  
+  .section-title {
+    font-size: 2.25rem;
+  }
+
+  /* Tablet: 2 columns */
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Tablet card layout is the same as mobile:
+    1. Image
+    2. Text (Category, Title, Description)
+  */
+}
+
+
+/* --- Desktop Styles (min-width: 1024px) --- */
+@media (min-width: 1024px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  /* Desktop: The card layout flips!
+    We use CSS Grid to re-order the content inside the card.
+  */
+  .service-card {
+    display: grid;
+    /* 2 columns *inside* the card */
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "text image"; /* Define layout areas */
+    gap: var(--spacing-lg);
+    align-items: center; /* Vertically center content */
+    padding: 32px;
+  }
+
+  .service-card-text {
+    grid-area: text; /* Assign text block to "text" area */
+    order: 0; /* Reset order */
+  }
+
+  .service-card-image-wrapper {
+    grid-area: image; /* Assign image to "image" area */
+    order: 0; /* Reset order */
+    margin-bottom: 0; /* Remove mobile margin */
+  }
+}

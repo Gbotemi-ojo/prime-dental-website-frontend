@@ -1,0 +1,72 @@
+/* src/components/AppointmentCTA/AppointmentCTA.css */
+
+.cta-container {
+  background-color: var(--color-primary-dark);
+  border-radius: 16px;
+  padding: 40px var(--spacing-md);
+  color: var(--color-background);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-tag {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-background);
+  opacity: 0.9;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-md);
+}
+
+.cta-title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+}
+
+.cta-description {
+  color: var(--color-text-light-on-dark);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.cta-button {
+  background-color: var(--color-background);
+  color: var(--color-primary-dark);
+  padding: 14px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600; /* Bolder */
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+/* --- Tablet Styles (min-width: 768px) --- */
+@media (min-width: 768px) {
+  .cta-container {
+    padding: 60px;
+  }
+  .cta-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* --- Desktop Styles (min-width: 1024px) --- */
+@media (min-width: 1024px) {
+  .cta-title {
+    font-size: 2.5rem;
+  }
+}

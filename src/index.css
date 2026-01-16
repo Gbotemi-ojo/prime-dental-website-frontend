@@ -1,0 +1,75 @@
+/* src/index.css */
+
+/* Define design tokens (colors, fonts, spacing) 
+  extracted from the screenshots.
+*/
+:root {
+  /* Colors */
+  --color-background: #ffffff;
+  --color-text-primary: #333333; /* For the logo text */
+  --color-text-nav: #4a4a4a; /* For nav links */
+  --color-hamburger-lines: #0d6efd; /* A blue, looks close to the image */
+  --color-border-light: #eeeeee;
+  --color-primary-dark: #006D77;  /* Dark teal for heading/button */
+  --color-primary-light: #E0F2F1; /* Very light green for bg/blobs */
+  --color-text-secondary: #555555; /* For the paragraph text */
+  --color-text-light: #777777;   /* For the trust badges */
+  --color-graphic-sun: #C8E6C9;   /* Light green for sun graphic */
+  --color-primary-tag: #E0F2F1;
+  --color-primary-border: #B2DFDB; /* Light teal for tag border */
+  --color-check-icon: #006D77;    /* Dark teal for check icon */
+  --color-text-light-on-dark: rgba(255, 255, 255, 0.7); /* For descriptions on dark bg */
+  --color-background-light-green: #F4FBF4;
+  --color-dot-inactive: #D8D8D8;
+  --color-background-footer: #F8FBF8; /* Very light green/beige */
+  --color-footer-border: #EAECEB;
+  --color-text-footer: #5A6463;     /* Softer text color for footer */
+  --color-background-process: #F9FBFA;
+  --color-background-card: #F9FBFA;
+  --color-background-light-blue: #F0F7FA;
+  
+
+  /* Typography */
+  --font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  --font-weight-bold: 700;
+  --font-size-logo: 1.25rem;
+  --font-size-nav: 1rem;
+
+  /* Spacing */
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+
+  /* Layout */
+  --header-height: 70px;
+  --container-max-width: 1200px;
+  --breakpoint-desktop: 992px; /* Point where mobile/tablet switches to desktop */
+}
+
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none; /* This will remove the bullet points */
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
