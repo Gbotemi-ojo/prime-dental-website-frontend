@@ -6,7 +6,7 @@ import './BookingForm.css';
 
 const BookingForm = () => {
   const [loading, setLoading] = useState(false);
-  
+
   // Initial State matches your Schema
   const initialFormData = {
     name: '',
@@ -15,6 +15,7 @@ const BookingForm = () => {
     phoneNumber: '',
     email: '',
     address: '',
+    branch: '', // Added branch field
     hmo: '', // Optional
     requestedAppointmentDate: '',
     complaint: ''
@@ -34,9 +35,9 @@ const BookingForm = () => {
     e.preventDefault();
     setLoading(true);
 
-    // Basic Validation
-    if (!formData.name || !formData.phoneNumber || !formData.sex) {
-      toast.error("Please fill in all required fields (Name, Phone, Sex).");
+    // Basic Validation including the new branch field
+    if (!formData.name || !formData.phoneNumber || !formData.sex || !formData.branch) {
+      toast.error("Please fill in all required fields (Name, Phone, Sex, Branch).");
       setLoading(false);
       return;
     }
@@ -159,6 +160,22 @@ const BookingForm = () => {
 
             {/* --- Appointment Details --- */}
             <div className="form-group">
+              <label htmlFor="branch" className="form-label">Branch to Visit *</label>
+              <select 
+                id="branch" 
+                name="branch" 
+                className="form-select"
+                value={formData.branch}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select Branch</option>
+                <option value="Iju">Iju</option>
+                <option value="Iyana Ipaja">Iyana Ipaja</option>
+              </select>
+            </div>
+
+            <div className="form-group">
               <label htmlFor="hmo" className="form-label">HMO Information (If Applicable)</label>
               <input 
                 type="text" 
@@ -171,7 +188,7 @@ const BookingForm = () => {
               />
             </div>
 
-            <div className="form-group">
+            <div className="form-group full-width">
               <label htmlFor="requestedAppointmentDate" className="form-label">Preferred Date</label>
               <input 
                 type="date" 
